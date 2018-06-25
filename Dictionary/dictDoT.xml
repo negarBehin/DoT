@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DoT dictionary which contains all commands and avps related to DoT-->
+<!-- Created 2015 Oct 04 -->
+<!-- Last change 2015 Oct 04 -->
+<dictionary>
+
+<!-- ********************** DoT Commands ********************** -->
+    <command code="401" name="DoT-Request"/> 
+    <command code="402" name="DoT-Answer"/> 
+<!-- ********************** DoT AVPs ************************** -->
+
+    <avp code="4001" name="Request-Type" type="Enumerated" mandatory="must">
+        <enum code="1" name="PROVISION-REQUEST"/>
+        <enum code="2" name="METER-REQUEST"/>
+        <enum code="3" name="UPDATE-REQUEST"/>
+        <enum code="4" name="PAY-REQUEST"/>
+        <enum code="5" name="TERMINATE-REQUEST"/>
+    </avp>
+    <avp code="4002" name="Request-Id" type="Unsigned32" mandatory="must"/>
+    <avp code="4003" mandatory="must" name="Dot-Requested-Action" type="Enumerated">
+        <enum code="1" name="PROVISION-APPLICATION-TOPOLOGY"/>
+        <enum code="2" name="APP-RESOURCE-ALLOCATION"/>
+        <enum code="3" name="START-IOT-APP"/>
+        <enum code="4" name="START-APP-METERING"/>
+        <enum code="5" name="GET-APP-SPECIFICATION"/>
+        <enum code="6" name="START-METERING-AGENTS"/>
+        <enum code="7" name="PUBLISH-USAGE-UPDATE"/>
+        <enum code="8" name="SEND-COMMIT-VOTES"/>
+        <enum code="9" name="COMMIT-METERING-TOKENS"/>
+        <enum code="10" name="COMMIT-APP-METERING"/>
+        <enum code="11" name="TERMINATE-APP-METERING"/>
+        <enum code="12" name="STOP-METERING-AGENTS"/>
+        <enum code="13" name="START-BILL-PAYMENT"/>
+        <enum code="14" name="LOCK-USER-CREDIT"/>
+    </avp> 
+    <avp code="4004" name="App-Topology" type="OctetString"/>
+    <avp code="4005" name="Subscription-Plan" type="OctetString"/>
+
+    <avp code="4006" name="App-Usage" type="Float64"/>
+    <avp code="4007" name="Confirmation-Mode" type="Enumerated">
+        <enum code="0" name="NOTIFY-ONLY"/>
+        <enum code="1" name="USER-ACTION-REQUIRED"/>
+    </avp>
+    <avp code="4008" name="Allocation-Unit" type="Enumerated">
+        <enum code="0" name="CREDIT"/>
+        <enum code="1" name="SUBSCRIPTION-TIME"/>
+    </avp>
+    <avp code="4009" name="Agent-Vote" type="Enumerated">
+        <enum code="0" name="NO"/>
+        <enum code="1" name="YES"/>
+    </avp>
+    <avp code="4010" name="User-Action" type="Enumerated">
+        <enum code="0" name="REJECT"/>
+        <enum code="1" name="CONFIRM"/>
+    </avp>
+    <avp code="4011" name="Password" type="OctetString" mandatory="must"/>
+    <avp code="4012" name="Service-Usage" type="Unsigned64" mandatory="must"/>
+    <avp code="4013" name="Resource-Usage" type="Grouped" mandatory="must"/>
+    <avp code="4014" name="Cpu-Usage" type="Unsigned64"/>
+    <avp code="4015" name="Memory-Usage" type="Unsigned64"/>
+    <avp code="4016" name="Network-Received" type="Unsigned64"/>
+    <avp code="4017" name="Network-Sent" type="Unsigned64"/>
+    <avp code="4018" name="Filesystem-Usage" type="Unsigned64"/>
+    <avp code="4019" name="Uptime" type="Unsigned64"/>
+    <avp code="4020" name="Service-Name" type="OctetString"/>
+    <avp code="4021" name="Billable-Artifact" type="OctetString"/>
+</dictionary>
